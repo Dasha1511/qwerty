@@ -1,0 +1,87 @@
+﻿@page
+@model qwerty.Pages.Studentss.IndexModel
+
+@{
+    ViewData["Title"] = "Ученики";
+}
+
+<h1>Ученики</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].Data_rozdenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].Pol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].FIO_ot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].FIO_mat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].Dopolnitelnaya_inf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].Class)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.students) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_rozdenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO_ot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO_mat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dopolnitelnaya_inf)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Class.First(r => r.ID == item.ClassID).Bukva
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@page
+@model qwerty.Pages.Raspisaniess.CreateModel
+
+@{
+    ViewData["Title"] = "Расписание";
+}
+
+<h1>Добавить расписание</h1>
+
+<h4>Введите данные</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="raspisanie.Data" class="control-label"></label>
+                <input asp-for="raspisanie.Data" class="form-control" />
+                <span asp-validation-for="raspisanie.Data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="raspisanie.Den_nedeli" class="control-label"></label>
+                <input asp-for="raspisanie.Den_nedeli" class="form-control" />
+                <span asp-validation-for="raspisanie.Den_nedeli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="raspisanie.Vrema_nachala" class="control-label"></label>
+                <input asp-for="raspisanie.Vrema_nachala" class="form-control" />
+                <span asp-validation-for="raspisanie.Vrema_nachala" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="raspisanie.Vrema_okonchania" class="control-label"></label>
+                <input asp-for="raspisanie.Vrema_okonchania" class="form-control" />
+                <span asp-validation-for="raspisanie.Vrema_okonchania" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="raspisanie.classID" class="control-label"></label>
+                <input asp-for="raspisanie.classID" class="form-control" />
+                <span asp-validation-for="raspisanie.classID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="raspisanie.predmetID" class="control-label"></label>
+                <input asp-for="raspisanie.predmetID" class="form-control" />
+                <span asp-validation-for="raspisanie.predmetID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

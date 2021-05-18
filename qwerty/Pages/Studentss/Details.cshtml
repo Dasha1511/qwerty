@@ -1,0 +1,67 @@
+﻿@page
+@model qwerty.Pages.Studentss.DetailsModel
+
+@{
+    ViewData["Title"] = "Ученики";
+}
+
+<h1>Детали записи</h1>
+
+<div>
+    <h4>Ученик</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.FIO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.FIO)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.Data_rozdenia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.Data_rozdenia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.Pol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.Pol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.Adres)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.Adres)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.FIO_ot)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.FIO_ot)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.FIO_mat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.FIO_mat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.Dopolnitelnaya_inf)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.Dopolnitelnaya_inf)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.students.ClassID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.students.ClassID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.students.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>

@@ -1,0 +1,64 @@
+﻿@page
+@model qwerty.Pages.Sotrudnikii.DeleteModel
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<h1>Удалить запись</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Сотрудник</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.FIO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.FIO)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.Old)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.Old)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.Pol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.Pol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.Pasport)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.Pasport)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.Telephone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.Telephone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.sotrudniki.DolznostID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.sotrudniki.DolznostID)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="sotrudniki.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+﻿@page
+@model qwerty.Pages.ZAF.Zapros.spisok_predmetovModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.predmet[0].Naimenovanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.predmet[0].sotrudniki)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.predmet)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naimenovanie)
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.sotrudniki.First(r => r.ID == item.sotrudnikiID).FIO
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

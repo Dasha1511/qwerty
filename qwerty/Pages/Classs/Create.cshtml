@@ -1,0 +1,59 @@
+﻿@page
+@model qwerty.Pages.Classs.CreateModel
+
+@{
+    ViewData["Title"] = "Класс";
+}
+
+<h1>Добавить класс</h1>
+
+<h4>Введите данные</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Class.Kolichestvo_uchenikov" class="control-label"></label>
+                <input asp-for="Class.Kolichestvo_uchenikov" class="form-control" />
+                <span asp-validation-for="Class.Kolichestvo_uchenikov" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.Bukva" class="control-label"></label>
+                <input asp-for="Class.Bukva" class="form-control" />
+                <span asp-validation-for="Class.Bukva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.God_obuchenia" class="control-label"></label>
+                <input asp-for="Class.God_obuchenia" class="form-control" />
+                <span asp-validation-for="Class.God_obuchenia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.God_sozdania" class="control-label"></label>
+                <input asp-for="Class.God_sozdania" class="form-control" />
+                <span asp-validation-for="Class.God_sozdania" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.sotrudnikiID" class="control-label"></label>
+                <input asp-for="Class.sotrudnikiID" class="form-control" />
+                <span asp-validation-for="Class.sotrudnikiID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class.vidID" class="control-label"></label>
+                <input asp-for="Class.vidID" class="form-control" />
+                <span asp-validation-for="Class.vidID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

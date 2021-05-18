@@ -1,0 +1,58 @@
+﻿@page
+@model qwerty.Pages.Raspisaniess.DeleteModel
+
+@{
+    ViewData["Title"] = "Расписание";
+}
+
+<h1>Удалить запись</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Расписание</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.raspisanie.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.raspisanie.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.raspisanie.Den_nedeli)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.raspisanie.Den_nedeli)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.raspisanie.Vrema_nachala)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.raspisanie.Vrema_nachala)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.raspisanie.Vrema_okonchania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.raspisanie.Vrema_okonchania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.raspisanie.classID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.raspisanie.classID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.raspisanie.predmetID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.raspisanie.predmetID)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="raspisanie.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

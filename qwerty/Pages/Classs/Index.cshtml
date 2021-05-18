@@ -1,0 +1,85 @@
+﻿@page
+@model qwerty.Pages.Classs.IndexModel
+
+@{
+    ViewData["Title"] = "Классы";
+}
+
+<h1>Классы</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Kolichestvo_uchenikov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Bukva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].God_obuchenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].God_sozdania)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].sotrudniki)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].vid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Class) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolichestvo_uchenikov)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bukva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.God_obuchenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.God_sozdania)
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.sotrudniki.First(r => r.ID == item.sotrudnikiID).FIO
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+            </td>
+            <td>
+                @{
+                    try
+                    {
+                        @Model.Vid.First(r => r.ID == item.vidID).Naimenovanie
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+                    }
+                }
+
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Детали</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

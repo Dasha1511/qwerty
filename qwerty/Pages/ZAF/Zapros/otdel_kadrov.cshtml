@@ -1,0 +1,42 @@
+﻿@page
+@model qwerty.Pages.ZAF.Zapros.otdel_kadrovModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sotrudniki[0].FIO)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.sotrudniki[0].Dolznost)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.sotrudniki)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Dolznost.First(r => r.ID == item.DolznostID).Naimenovanie_dolznosti
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+
+                </td>
+                </tr>
+        }
+    </tbody>
+</table>

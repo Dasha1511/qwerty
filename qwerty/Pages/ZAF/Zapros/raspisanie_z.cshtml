@@ -1,0 +1,50 @@
+﻿@page
+@model qwerty.Pages.ZAF.Zapros.raspisanie_zModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.raspisanie[0].Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.raspisanie[0].predmet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.raspisanie)
+        {
+            <tr>
+                
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Class.First(r => r.ID == item.classID).Bukva
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.predmet.First(r => r.ID == item.predmetID).Naimenovanie
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

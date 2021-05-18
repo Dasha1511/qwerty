@@ -1,0 +1,46 @@
+﻿@page
+@model qwerty.Pages.Dolznosts.DeleteModel
+
+@{
+    ViewData["Title"] = "Должности";
+}
+
+<h1>Удалить запись</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Naimenovanie_dolznosti)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Naimenovanie_dolznosti)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Oklad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Oklad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Obazannosty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Obazannosty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Trebovania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Trebovania)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Dolznost.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

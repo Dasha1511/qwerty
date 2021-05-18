@@ -1,0 +1,42 @@
+﻿@page
+@model qwerty.Pages.ZAF.Zapros.spisok_uchenikovModel
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].FIO)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.students[0].Class)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.students)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Class.First(r => r.ID == item.ClassID).Bukva
+                        }
+                        catch
+                        {
+                            <p>нет</p>
+                        }
+                    }
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>

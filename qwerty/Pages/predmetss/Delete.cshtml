@@ -1,0 +1,40 @@
+﻿@page
+@model qwerty.Pages.predmetss.DeleteModel
+
+@{
+    ViewData["Title"] = "Предметы";
+}
+
+<h1>Удалить запись</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Предмет</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.predmet.Naimenovanie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.predmet.Naimenovanie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.predmet.Opisanie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.predmet.Opisanie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.predmet.sotrudnikiID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.predmet.sotrudnikiID)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="predmet.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+﻿@page
+@model qwerty.Pages.Classs.DeleteModel
+
+@{
+    ViewData["Title"] = "Классы";
+}
+
+<h1>Удалить запись</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Класс</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Kolichestvo_uchenikov)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Kolichestvo_uchenikov)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.Bukva)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Bukva)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.God_obuchenia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.God_obuchenia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.God_sozdania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.God_sozdania)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.sotrudnikiID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.sotrudnikiID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Class.vidID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.vidID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Class.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Вернуться назад</a>
+    </form>
+</div>

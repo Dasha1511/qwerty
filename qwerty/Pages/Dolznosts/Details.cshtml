@@ -1,0 +1,43 @@
+﻿@page
+@model qwerty.Pages.Dolznosts.DetailsModel
+
+@{
+    ViewData["Title"] = "Должности";
+}
+
+<h1>Детали записи</h1>
+
+<div>
+    <h4>Должность</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Naimenovanie_dolznosti)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Naimenovanie_dolznosti)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Oklad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Oklad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Obazannosty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Obazannosty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dolznost.Trebovania)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dolznost.Trebovania)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Dolznost.ID">Изменить</a> |
+    <a asp-page="./Index">Вернуться назад</a>
+</div>
