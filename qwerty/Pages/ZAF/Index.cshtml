@@ -22,6 +22,14 @@
                 <p>
                     <a class="nav-link text-dark" asp-area="" asp-page="Zapros/raspisanie_z">Расписание занятий</a>
                 </p>
+                <form>
+                    Отобразить сотрудников с должностью:
+                    <select asp-items="Model.otdel" name="id" class="form-control-sm">
+                        <option value="-1">Должность не выбрана</option>
+                    </select>
+                    <button asp-page="Filtr/sotrudniki_od" class="btn btn-primary">Отфильтровать</button>
+                </form>
+
             </div>
         </div>
 

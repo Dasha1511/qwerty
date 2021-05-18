@@ -2,3 +2,33 @@
 @model qwerty.Pages.ZAF.Filtr.sotrudniki_odModel
 @{
 }
+<h1>Отдел кадров</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sotrudniki[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sotrudniki[0].DolznostID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.sotrudniki)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FIO)
+                </td>
+                <td>
+                    @Model.Dolznost.Naimenovanie_dolznosti
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

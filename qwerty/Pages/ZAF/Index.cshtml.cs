@@ -4,13 +4,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace qwerty.Pages.ZAF
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        private readonly qwerty.Data.qwertyContext _context;
+
+        public IndexModel(qwerty.Data.qwertyContext context)
         {
+            _context = context;
         }
+        public List<SelectListItem> otdel { get; set; }
+        public IActionResult OnGet()
+        {
+            otdel = _context.Dolznost.Select(p =>
+                new SelectListItem
+                {
+                    Value = p.ID.ToString(),
+                    Text = p.Naimenovanie_dolznosti
+                }).ToList();
+            return Page();
+        }
+
     }
 }
