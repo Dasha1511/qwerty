@@ -30,7 +30,13 @@
                     </select>
                     <button asp-page="Filtr/sotrudniki_od" class="btn btn-primary">Отфильтровать</button>
                 </form>
-
+                <form>
+                    Отобразить учеников с буквой:
+                    <select asp-items="Model.god" name="id" class="form-control-sm">
+                        <option value="-1">Буква не выбрана</option>
+                    </select>
+                    <button asp-page="Filtr/filtrbuk" class="btn btn-primary">Отфильтровать</button>
+                </form>
             </div>
         </div>
 
