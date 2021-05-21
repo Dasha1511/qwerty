@@ -1,0 +1,34 @@
+﻿@page
+@model qwerty.Pages.ZAF.Filtr.vkModel
+@{
+}
+<h1>Виды классов</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].Bukva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class[0].vidID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Class)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bukva)
+                </td>
+                <td>
+                    @Model.Vid.Naimenovanie
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

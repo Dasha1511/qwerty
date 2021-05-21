@@ -18,6 +18,7 @@ namespace qwerty.Pages.ZAF
         }
         public List<SelectListItem> otdel { get; set; }
         public List<SelectListItem> god { get; set; }
+        public List<SelectListItem> vvv { get; set; }
         public IActionResult OnGet()
         {
             otdel = _context.Dolznost.Select(p =>
@@ -33,6 +34,15 @@ namespace qwerty.Pages.ZAF
                     Value = p.ID.ToString(),
                     Text = p.Bukva
                 }).ToList();
+
+
+            god = _context.Vid.Select(p =>
+                new SelectListItem
+                {
+                    Value = p.ID.ToString(),
+                    Text = p.Naimenovanie
+                }).ToList();
+
             return Page();
         }
 

@@ -37,8 +37,15 @@
                     </select>
                     <button asp-page="Filtr/filtrbuk" class="btn btn-primary">Отфильтровать</button>
                 </form>
+                <form>
+                    Отобразить вид класса:
+                    <select asp-items="Model.vvv" name="id" class="form-control-sm">
+                        <option value="-1">Вид не выбран</option>
+                    </select>
+                    <button asp-page="Filtr/vk" class="btn btn-primary">Отфильтровать</button>
+                </form>
+                <br />
             </div>
         </div>
-
     </div>
 </div>
